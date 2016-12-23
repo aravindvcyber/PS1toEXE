@@ -33,7 +33,7 @@ if( $runtime20 -eq $true -and ($runtime30 -eq $true -or $runtime40 -eq $true -or
 }
 
 if( $sta -eq $true -and $mta -eq $true ) {
-    write-host "YOU CANNOT USE SWITCHES -sta AND -eta AT THE SAME TIME!"
+    write-host "YOU CANNOT USE SWITCHES -sta AND -mta AT THE SAME TIME!"
     exit -1
 }
 
