@@ -1,4 +1,4 @@
-param([string]$inputFile=$null, [string]$outputFile=$null, [switch]$verbose, [switch] $debug, [switch]$runtime20, [switch]$x86, [switch]$x64, [switch]$runtime30, [switch]$runtime40, [switch]$runtime50, [int]$lcid, [switch]$sta, [switch]$mta, [switch]$noConsole, [switch]$nested, [string]$iconFile=$null)
+param([Parameter(Mandatory=$true)][string]$inputFile, [string]$outputFile=$null, [switch]$runtime20, [switch]$x86, [switch]$x64, [switch]$runtime30, [switch]$runtime40, [switch]$runtime50, [int]$lcid, [switch]$sta, [switch]$mta, [switch]$noConsole, [switch]$nested, [string]$iconFile=$null)
 
 
 <################################################################################>
@@ -33,11 +33,11 @@ if( $runtime20 -eq $true -and ($runtime30 -eq $true -or $runtime40 -eq $true -or
 }
 
 if( $sta -eq $true -and $mta -eq $true ) {
-    write-host "YOU CANNOT USE SWITCHES -sta AND -eta AT THE SAME TIME!"
+    write-host "YOU CANNOT USE SWITCHES -sta AND -mta AT THE SAME TIME!"
     exit -1
 }
 
-
+<#
 if( [string]::IsNullOrEmpty($inputFile) -or [string]::IsNullOrEmpty($outputFile) ) {
 Write-Host "Usage:"
 Write-Host ""
@@ -73,6 +73,10 @@ Write-Host "             sta = Single Thread Apartment Mode"
 Write-Host "             mta = Multi Thread Apartment Mode"
 write-host "       noConsole = The resulting EXE file starts without a console window just like a Windows Forms app."
 write-host ""
+}
+#>
+if( [string]::IsNullOrEmpty($outputFile) ){
+$outputFile=$inputFile -replace '.ps1','.exe'
 }
 
 $psversion = 0
@@ -159,20 +163,20 @@ if( $psversion -ge 3 -and $runtime20 ) {
 }
 
 if( $psversion -lt 3 -and $runtime30 ) {
-    Write-Host "YOU NEED TO RUN PS1toEXE IN AN POWERSHELL 3.0 ENVIRONMENT"
+    Write-Host "YOU NEED TO RUN PS1toEXE IN A POWERSHELL 3.0 ENVIRONMENT"
     Write-Host "  TO USE PARAMETER -runtime30"
     write-host
     exit -1
 }
 
 if( $psversion -lt 4 -and $runtime40 ) {
-    Write-Host "YOU NEED TO RUN PS1toEXE IN AN POWERSHELL 4.0 ENVIRONMENT"
+    Write-Host "YOU NEED TO RUN PS1toEXE IN A POWERSHELL 4.0 ENVIRONMENT"
     Write-Host "  TO USE PARAMETER -runtime40"
     write-host
     exit -1
 }
 if( $psversion -lt 5 -and $runtime50 ) {
-    Write-Host "YOU NEED TO RUN PS1toEXE IN AN POWERSHELL 5.0 ENVIRONMENT"
+    Write-Host "YOU NEED TO RUN PS1toEXE IN A POWERSHELL 5.0 ENVIRONMENT"
     Write-Host "  TO USE PARAMETER -runtime50"
     write-host
     exit -1

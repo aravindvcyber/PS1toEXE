@@ -1,0 +1,4 @@
+function ConvertTo-Exe([Parameter(Mandatory=$true)][string]$inputFile, [string]$outputFile=$null, [switch]$runtime20, [switch]$x86, [switch]$x64, [switch]$runtime30, [switch]$runtime40, [switch]$runtime50, [int]$lcid, [switch]$sta, [switch]$mta, [switch]$noConsole, [switch]$nested, [string]$iconFile=$null){
+Invoke-Expression -Command $PSScriptRoot\PS1toEXE.ps1 -inputFile $inputFile -outputFile $outputFile -runtime20:$runtime20 -x86:$x86 -x64:$x64 -runtime30:$runtime30 -runtime40:$runtime40 -runtime50:$runtime50 -lcid $lcid -sta:$sta -mta:$mta -noConsole:$noConsole -nested:$nested -iconFile $iconFile
+}
+Export-ModuleMember -Function ConvertTo-Exe
