@@ -17,7 +17,9 @@ This PowerShell script lets you "convert" PowerShell scripts into EXE files modi
 
 Open windows powershell
 
-```ps c:\> .\ps1toexe.ps1 -inputfile inputfilepath.ps1 outputfilepath.exe``` and other necessary switches
+```ps c:\> .\ps1toexe.ps1 -inputfile inputfilepath.ps1 outputfilepath.exe``` and other necessary switches.
+
+Besides this some of our contributes has built an export module as well `ConvertTo-Exe`
 
 ### For more stuff like this follow our blog [:postbox: Dev Post](https://dev-post.hashnode.dev)
 
