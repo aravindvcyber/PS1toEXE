@@ -19,13 +19,13 @@ Open windows powershell
 
 ```ps c:\> .\ps1toexe.ps1 -inputfile inputfilepath.ps1 outputfilepath.exe``` and other necessary switches.
 
-Besides this some of our contributes has built an export module as well `ConvertTo-Exe`
+Besides this some of our contributes has built an export module as well `ConvertTo-Exe`, go and explore it which make this better now.
 
-### For more stuff like this follow our blog [:postbox: Dev Post](https://dev-post.hashnode.dev)
+### For more stuff like this follow our blog [:postbox: Dev Post](https://dev-post.hashnode.dev).
+
+This repo is free to use and we are ready to refine with your contributions as well, so don't hesitate to raise :white_check_mark: pull request or comment in our blog post below
 
 And also find our community post with reactions about [:link: @PS1toEXE](https://dev-post.hashnode.dev/PS1toEXE)
-
-This repo is free to use and we are ready to refine with your contributions as well, so don't hesitate to raise :white_check_mark: pull request.
 
 
 
